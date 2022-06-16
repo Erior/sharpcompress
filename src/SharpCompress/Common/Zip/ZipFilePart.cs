@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Buffers.Binary;
 using System.IO;
 using System.Linq;
@@ -61,6 +61,11 @@ namespace SharpCompress.Common.Zip
             {
                 case ZipCompressionMethod.None:
                     {
+                        if(FlagUtility.HasFlag(Header.Flags, HeaderFlags.UsePostDataDescriptor) && Header.CompressedSize == 0 && Header.UncompressedSize == 0 && stream.CanSeek)
+                        {
+                            return new PostDataDescriptorStream(stream);
+                        }
+
                         return stream;
                     }
                 case ZipCompressionMethod.Deflate:
