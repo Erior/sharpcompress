@@ -292,7 +292,7 @@ internal partial class Unpack
         CancellationToken cancellationToken = default
     )
     {
-        if ( Inp.InAddr > ReadTop - 16)
+        if (Inp.InAddr > ReadTop - 16)
         {
             if (!await UnpReadBufAsync(cancellationToken).ConfigureAwait(false))
             {

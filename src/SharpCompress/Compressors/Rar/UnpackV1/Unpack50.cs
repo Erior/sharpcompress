@@ -372,7 +372,7 @@ internal partial class Unpack
 
     private bool ReadFilter(UnpackFilter Filter)
     {
-        if ( Inp.InAddr > ReadTop - 16)
+        if (Inp.InAddr > ReadTop - 16)
         {
             if (!UnpReadBuf())
             {

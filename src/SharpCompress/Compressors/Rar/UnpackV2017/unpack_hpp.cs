@@ -166,7 +166,6 @@ internal class UnpackFilter
     internal bool NextWindow;
 };
 
-
 internal class AudioVariables // For RAR 2.0 archives only.
 {
     internal int K1,
@@ -354,7 +353,6 @@ internal partial class Unpack
     #endif*/
     private int PPMEscChar;
 
-
     // If we already read decoding tables for Unpack v2,v3,v5.
     // We should not use a single variable for all algorithm versions,
     // because we can have a corrupt archive with one algorithm file
@@ -362,8 +360,6 @@ internal partial class Unpack
     // want to reuse tables from one algorithm in another.
     private bool TablesRead2,
         TablesRead5;
-
-
 
     /*#if RarV2017_RAR_SMP
     // More than 8 threads are unlikely to provide a noticeable gain
